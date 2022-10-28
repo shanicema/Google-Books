@@ -7,7 +7,7 @@ const SearchBar = ( {onSearch }) => {
     const [search, setSearch] = useState('');
 
     const onInputChange = (event) => {
-        console.log(event);
+        console.log(event.target.value)
         setSearch(event.target.value);
     }
 
@@ -15,6 +15,23 @@ const SearchBar = ( {onSearch }) => {
         event.preventDefault();
         onSearch(search);
     }
+
+
+    return (
+        <div>
+            <form onSubmit={onFormSubmit}>
+                <input type="text" placeholder="Enter search here" value={search} onChange={onInputChange} />
+
+                <button type="submit">Search</button>
+                
+                {/* <p>Results: </p> */}
+                {/* <p>Results: {JSON.stringify(book)}</p> */}
+            </form>
+        </div>
+    );
+};
+
+export default SearchBar;
 
 
     // const initialState = {
@@ -43,19 +60,3 @@ const SearchBar = ( {onSearch }) => {
 // useEffect(() => {
 //     getBooks()
 // }, [trigger])
-
-    return (
-        <form onSubmit={onFormSubmit}>
-            
-                <input type="text" placeholder="Enter book search here" value={search} onChange={onInputChange} />
-
-                <input type="submit" value="Search" />
-                
-                {/* <p>Results: </p> */}
-                {/* <p>Results: {JSON.stringify(book)}</p> */}
-           
-        </form>
-    );
-};
-
-export default SearchBar;

@@ -5,9 +5,6 @@ import style from './BookGallery.module.scss'
 
 
 const BookGallery = ({books}) => {
-    // useEffect(() => {
-    //     getBooks().then((books) => setBooks(books));
-    // }, []);
 
     return (
         <section>
@@ -15,9 +12,9 @@ const BookGallery = ({books}) => {
                 <h2>Search Results</h2>
             </div>
             <div className={style.Gallery}>
-                {/* {books.map((bookData) => ( */}
-                    <BookCard />
-                {/* ))} */}
+                {books.map((book) => (
+                    <BookCard key={book.id} book={book.volumeInfo}/>
+                ))} 
             </div>
         </section>
     );

@@ -1,14 +1,19 @@
+import { useEffect } from "react";
 
-const printTypes = []
+export const getBooks = async (searchTerm, startIndex, maxResults) => {
 
+    startIndex = 0;
+    maxResults = 20;
 
-const getBooks = async () => {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&startIndex=${startIndex}&maxResults=${maxResults}`;
+
+    console.log(url);
+
+    const response = await fetch(url)
+    const bookData = await response.json()
     
-    const response = await fetch('https://www.googleapis.com/books/v1/volumes?q=search+terms')
-    const json = await response.json()
-    console.log(json);
-
-    return json.items;
+    return bookData.items;
+    console.log(bookData.items);
 };
 
 export default getBooks;

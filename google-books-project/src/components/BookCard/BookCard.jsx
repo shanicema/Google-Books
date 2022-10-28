@@ -2,13 +2,22 @@ import React from 'react';
 import style from './BookCard.module.scss'
 
 
-const BookCard = () => {
+const BookCard = ({book}) => {
+
     return (
         <section className={style.Card}>
-            <h3>Book Title</h3>
-            <h4>Book Author</h4>
-            <h5>Book Description</h5>
-            <img className={style.Image} src='https://m.media-amazon.com/images/I/51Z0nLAfLmL.jpg'></img>
+            <h3>{book.title}</h3>
+
+            {/* if book.authors is undefined then ignore join to prevent throwing error */}
+            <h4>{book.authors?.join(', ')}</h4> 
+            
+            <h5>{book.description}</h5>
+
+            <img 
+            className={style.Image} 
+            // if book.imageLinks is undefined then ignore thumbnail to prevent throwing error
+            src={book.imageLinks?.thumbnail} 
+            alt={book.title} />
         </section>
     );
 };
