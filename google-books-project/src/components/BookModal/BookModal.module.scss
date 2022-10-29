@@ -1,0 +1,44 @@
+.Modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    &__Container {
+        padding: 30px;
+        // max-height: 70vh;
+        // max-width: 90vw;
+        // overflow: hidden;
+        position: relative;
+
+        // width: 50%;
+        // max-width: 50%;
+        color: black;
+        background-color: white;  
+    
+        &__BtnContainer {
+            text-align: center;
+            &__Close {
+                margin-top: 10px;
+                // position: relative;
+                // left: 50%;
+                // transform: translate(-50%, -50%);
+            }
+        } 
+    
+        &__Desc {
+            width: auto;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 10;
+            -webkit-box-orient: vertical; 
+        }
+    
+        &__ImgContainer {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+    }
+}
+
