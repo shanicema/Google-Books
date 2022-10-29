@@ -19,7 +19,7 @@ const SearchBar = ( {onSearch }) => {
 
     return (
         <div>
-            <form onSubmit={onFormSubmit}>
+            <form className={style.Container} onSubmit={onFormSubmit}>
                 <input type="text" placeholder="Enter search here" value={search} onChange={onInputChange} />
 
                 <button type="submit">Search</button>

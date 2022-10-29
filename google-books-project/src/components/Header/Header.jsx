@@ -3,8 +3,8 @@ import style from './Header.module.scss';
 
 const Header = () => {
     return (
-        <div>
-            <h1>Google Book Search</h1>
+        <div className={style.Header}>
+            <h1 className={style.Header__Title}>Google Book Directory</h1>
         </div>
     );
 };

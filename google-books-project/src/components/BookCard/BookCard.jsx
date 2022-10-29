@@ -6,18 +6,21 @@ const BookCard = ({book}) => {
 
     return (
         <section className={style.Card}>
-            <h3>{book.title}</h3>
+            <h2 className={style.Card__Title}>{book.title}</h2>
 
-            {/* if book.authors is undefined then ignore join to prevent throwing error */}
-            <h4>{book.authors?.join(', ')}</h4> 
+            {/* if book.authors is undefined then ignore join to prevent throwing error and render string */}
+            <h4 className={style.Card__Author}>{`By ${book.authors?.join(', ') || "Anonymous"}`}</h4> 
             
-            <h5>{book.description}</h5>
+            <div className={style.Card__Container}>
+                <img 
+                className={style.Card__Image} 
+                // if book.imageLinks is undefined then ignore thumbnail to prevent throwing error and render string 
+                src={`${book.imageLinks?.thumbnail || 'src/assets/no-image.png' }`} 
+                alt={book.title} />
+            </div>
 
-            <img 
-            className={style.Image} 
-            // if book.imageLinks is undefined then ignore thumbnail to prevent throwing error
-            src={book.imageLinks?.thumbnail} 
-            alt={book.title} />
+            <h5 className={style.Card__Desc}>{book.description}</h5>
+
         </section>
     );
 };

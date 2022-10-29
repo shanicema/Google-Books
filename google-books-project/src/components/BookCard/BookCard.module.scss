@@ -1,8 +1,87 @@
-.Image {
-    width: 100px;
+@use "../../media-queries/devices";
+@use "../../mixins";
+.Card {
+    border: 1px solid white;
+    // width: 200px;
+    padding: 30px;
+    width: 20%;
+    @include mixins.screen-size(devices.$xxxs) {
+        width: 100%;
+        max-width: 100%;
+    }
+    @include mixins.screen-size(devices.$xxs) {
+        width: 95%;
+        max-width: 95%;
+    }
+    @include mixins.screen-size(devices.$xs) {
+        width: 39%;
+        max-width: 39%;
+    }
+    // @include mixins.screen-size(devices.$sm) {
+    //     max-width: 39%;
+    // }
+    @include mixins.screen-size(devices.$md) {
+        max-width: 25%;
+    }
+    @include mixins.screen-size(devices.$lg) {
+        max-width: 19%;
+    }
+
+    &__Title {
+        @include mixins.screen-size(devices.$xxxs) {
+            font-size: smaller;
+        }
+        @include mixins.screen-size(devices.$xxs) {
+         font-size: 1em
+        }
+        @include mixins.screen-size(devices.$xs) {
+         font-size: 1.5em
+        }
+    }
+
+    &__Author{
+        @include mixins.screen-size(devices.$xxxs) {
+            font-size: smaller;
+        }
+        @include mixins.screen-size(devices.$xxs) {
+            font-size: 0.8em;
+        }
+        @include mixins.screen-size(devices.$xs) {
+            font-size: 1em;
+        }
+    }
+
+    &__Container {
+        // width: 150px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__Image {
+        max-width: auto;
+        @include mixins.screen-size(devices.$xxxs) {
+            max-width: 100px;
+        }
+        // @include mixins.screen-size(devices.$xxs) {
+        //     max-width: 100px;
+        // }
+    }
+
+    &__Desc {
+        width: auto;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical; 
+        @include mixins.screen-size(devices.$xxxs) {
+            font-size: xx-small;
+        } 
+        @include mixins.screen-size(devices.$xxs) {
+            font-size: 0.8em;
+        }
+        @include mixins.screen-size(devices.$xs) {
+            font-size: 0.9em;
+        }
+    }
 }
 
-.Card {
-    border: 2px solid white;
-    width: 200px;
-}

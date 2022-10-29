@@ -1,0 +1,36 @@
+@use "../../media-queries/devices";
+@use "../../mixins";
+
+.Header {
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+		url('../../assets/bookwallpaper.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 15% 0%;
+	background-attachment: scroll;
+	padding: 20px 0;
+	box-shadow: 0 0 10px black;
+	
+	@include mixins.screen-size(devices.$xxxs) {
+		width: 320px;
+		max-width: 320px;
+	}
+	@include mixins.screen-size(devices.$xxs) {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	&__Title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
+		@include mixins.screen-size(devices.$xxxs) {
+			font-size: smaller;
+		}
+		@include mixins.screen-size(devices.$xxs) {
+			font-size: 3em;
+			line-height: 1.1;
+		}
+	}
+}
