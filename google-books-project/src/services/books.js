@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export const getBooks = async (searchTerm, startIndex, maxResults) => {
 
     startIndex = 0;
-    maxResults = 20;
+    maxResults = 40;
 
     const url = `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&startIndex=${startIndex}&maxResults=${maxResults}`;
 

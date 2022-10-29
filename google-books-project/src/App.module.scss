@@ -1,0 +1,8 @@
+@use "./partials/palette";
+@use "./partials/typography";
+
+.App {
+    font-family: typography.$primary-font;
+    color: palette.$primary-colour;
+}
+

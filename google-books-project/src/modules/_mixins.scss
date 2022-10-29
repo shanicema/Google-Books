@@ -1,4 +1,4 @@
-@use "./media-queries/devices";
+@use "../media-queries/devices";
 
 @mixin screen-size($min, $max: 5000px) {
     @media only screen and (min-width: ($min + 1)) and (max-width: $max) {

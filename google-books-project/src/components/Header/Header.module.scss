@@ -1,5 +1,5 @@
 @use "../../media-queries/devices";
-@use "../../mixins";
+@use "../../modules/mixins";
 
 .Header {
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),

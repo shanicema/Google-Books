@@ -1,5 +1,6 @@
 @use "../../media-queries/devices";
-@use "../../mixins";
+@use "../../modules/mixins";
+
 .Card {
     border: 1px solid white;
     // width: 200px;
